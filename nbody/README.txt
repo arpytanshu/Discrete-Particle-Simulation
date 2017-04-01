@@ -1,0 +1,2 @@
+CHANGE PATH OF KERNEL FILE IN OCLPARAM.H
+OCLPARAM.H ==> SOURCE_FILENAME = " <path to kernel.cl/kernel2.cl> " 
