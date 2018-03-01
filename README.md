@@ -1,7 +1,5 @@
 # Discrete-Particle-Simulation
-Discrete Paarticle simulation using OpenCL and OpenGL &lt;freeglut>
-
-
+Discrete Particles simulation using OpenCL and OpenGL &lt;freeglut>
 
 Discrete particle methods are relatively computationally intensive, which
 limits either the duration of a simulation or the number of particles. Several
@@ -26,11 +24,11 @@ An N-body Simulation is a simulation of a dynamic system of particles
 usually under the influence of physical forces such as gravity or electrostatic
 forces.
 
-![N-Body Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/nbody-simulation-image.png)
+![N-Body Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/nbody-simulation-image.png)
 
 The Nbody Kernel illustrates the working of the discrete particle simulation model used, as it is pretty simple and intuitive to understand.
 
-![N-Body Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/nbody-kernel.png)
+![N-Body Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/nbody-kernel.png)
 
 
 # Smooth Particles Hydrodynamics
@@ -39,7 +37,7 @@ used for simulating the dynamics of continuum medium, such as fluid flow.
 The method was developed by Gingold & Monaghan [1977] and Lucy [1977]
 initially for astrophysical problems. 
 
-![SPH Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/sph-simulation-image.png)
+![SPH Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/sph-simulation-image.png)
 
 The SPH Kernel is divided into 3 modules.
 The first named Acceleration_Calc() is responsible for computing the
@@ -50,9 +48,18 @@ Boundary_Reflect(), performes a reflection operation, in which, if a
 particle, if tries to escape beyond the boundaries of the container or of
 an obstacle, is reflected back with a damped velocity.
 
-![SPH Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/sph-kernel.png)
+![SPH Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/sph-kernel.png)
 
+# System DFD
 
+The system has 2 main Modules namely OCL & OGL. How these modules
+bring data back & forth between the Host & Device momory is described in the
+following System DFD.
+The OCL module first initializes the Device Memory by bringing in initialized
+buffers from the Host Memory. It then initiates the Kernel to run on the
+OpenCL device and compute upon it. The results are then brought back to the
+Host Memory by the module which is used for rendering.
+![System DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/System%20DFD.png)
 
 # Performance Metrics
 Here we present the performance comparison of our simulation when running
@@ -64,9 +71,9 @@ in real time over our test devices:
 
 Performance of the N-Body Kernel on test devices:
 
-![N-Body Kernel Performance](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/Nbody%20Test%20Result.png)
+![N-Body Kernel Performance](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/Nbody%20Test%20Result.png)
 
 Performance of the SPH Kernel on test devices:
 
-![SPH Kernel Performance](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/SPH%20Test%20result.png)
+![SPH Kernel Performance](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/images/SPH%20Test%20result.png)
 
