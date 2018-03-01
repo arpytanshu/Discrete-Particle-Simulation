@@ -51,3 +51,22 @@ particle, if tries to escape beyond the boundaries of the container or of
 an obstacle, is reflected back with a damped velocity.
 
 ![SPH Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/sph-kernel.png)
+
+
+
+# Performance Metrics
+Here we present the performance comparison of our simulation when running
+in real time over our test devices:
+1. Intel HD 5500 with 24 Execution Units
+2. Nvidia GeForce GTX 860M with 640 Execution Units
+3. Intel Core i5 5200U with 4 Execution Units
+
+
+Performance of the N-Body Kernel on test devices:
+
+![N-Body Kernel Performance](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/Nbody%20Test%20Result.png)
+
+Performance of the SPH Kernel on test devices:
+
+![SPH Kernel Performance](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/SPH%20Test%20result.png)
+
