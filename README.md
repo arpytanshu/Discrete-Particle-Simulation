@@ -22,10 +22,32 @@ GPU NVIDIA GeForce GTX 860M.
 
 
 # N – Body Simulation
+An N-body Simulation is a simulation of a dynamic system of particles
+usually under the influence of physical forces such as gravity or electrostatic
+forces.
 
-![N-Body Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/nbody-image.jpg.png)
+![N-Body Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/nbody-simulation-image.png)
 
+The Nbody Kernel illustrates the working of the discrete particle simulation model used, as it is pretty simple and intuitive to understand.
+
+![N-Body Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/nbody-kernel.png)
 
 
 # Smooth Particles Hydrodynamics
-![SPH Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/sph-image.jpg.png)
+Smooth Particle Hydrodynamics (SPH) is a computational method which is
+used for simulating the dynamics of continuum medium, such as fluid flow.
+The method was developed by Gingold & Monaghan [1977] and Lucy [1977]
+initially for astrophysical problems. 
+
+![SPH Simulation Image](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/sph-simulation-image.png)
+
+The SPH Kernel is divided into 3 modules.
+The first named Acceleration_Calc() is responsible for computing the
+density, followed by the acceleration. The second module, named
+LeapFrog_Integrator() integrates the result of the first module into
+velocities and positions vectors. The third module, named
+Boundary_Reflect(), performes a reflection operation, in which, if a
+particle, if tries to escape beyond the boundaries of the container or of
+an obstacle, is reflected back with a damped velocity.
+
+![SPH Kernel DFD](https://github.com/arpytanshu/Discrete-Particle-Simulation/blob/master/sph-kernel.png)
