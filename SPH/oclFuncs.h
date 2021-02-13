@@ -212,8 +212,8 @@ void initOcl(){
         err = clGetDeviceIDs(PLATFORM, CL_DEVICE_TYPE_CPU, ret_num_devices_cpu, &devices[0], NULL);
             if(err!=0){std::cout<<"clGetDeviceIDs Error! Error Code: "<<err<<std::endl;}
     }
-    if(ret_num_devices_cpu>0){
-        err = clGetDeviceIDs(PLATFORM, CL_DEVICE_TYPE_GPU, ret_num_devices_cpu, &devices[0+ret_num_devices_cpu], NULL);
+    if(ret_num_devices_gpu>0){
+        err = clGetDeviceIDs(PLATFORM, CL_DEVICE_TYPE_GPU, ret_num_devices_gpu, &devices[0+ret_num_devices_cpu], NULL);
             if(err!=0){std::cout<<"clGetDeviceIDs Error! Error Code: "<<err<<std::endl;}
     }
 

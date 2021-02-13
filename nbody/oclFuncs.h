@@ -172,21 +172,21 @@ void queryPlatform(cl_platform_id* platform, cl_uint num_platform){
 
     for(int i=0; i<num_platform; i++){
 
-    clGetPlatformInfo(platform[i], CL_PLATFORM_PROFILE, sizeof(platform_profile), &platform_profile, NULL);
-    clGetPlatformInfo(platform[i], CL_PLATFORM_VERSION, sizeof(platform_version), &platform_version, NULL);
-    clGetPlatformInfo(platform[i], CL_PLATFORM_NAME, sizeof(platform_name), &platform_name, NULL);
-    clGetPlatformInfo(platform[i], CL_PLATFORM_VENDOR, sizeof(platform_vendor), &platform_vendor, NULL);
-    clGetPlatformInfo(platform[i], CL_PLATFORM_EXTENSIONS, sizeof(platform_extensions), &platform_extensions, NULL);
+        clGetPlatformInfo(platform[i], CL_PLATFORM_PROFILE, sizeof(platform_profile), &platform_profile, NULL);
+        clGetPlatformInfo(platform[i], CL_PLATFORM_VERSION, sizeof(platform_version), &platform_version, NULL);
+        clGetPlatformInfo(platform[i], CL_PLATFORM_NAME, sizeof(platform_name), &platform_name, NULL);
+        clGetPlatformInfo(platform[i], CL_PLATFORM_VENDOR, sizeof(platform_vendor), &platform_vendor, NULL);
+        clGetPlatformInfo(platform[i], CL_PLATFORM_EXTENSIONS, sizeof(platform_extensions), &platform_extensions, NULL);
 
 
-    //PRINT OUT THE RESULTS
-    std::cout<<"Platform Profile: \t\t"<<platform_profile<<std::endl;
-    std::cout<<"Platform Version: \t"<<platform_version<<std::endl;
-    std::cout<<"Platform Name: \t"<<platform_name<<std::endl;
-    std::cout<<"Platform Vendor: "<<platform_vendor<<std::endl;
-    std::cout<<"Platform Extensions: \t"<<platform_extensions<<std::endl;
+        //PRINT OUT THE RESULTS
+        std::cout<<"Platform Profile: \t\t"<<platform_profile<<std::endl;
+        std::cout<<"Platform Version: \t"<<platform_version<<std::endl;
+        std::cout<<"Platform Name: \t"<<platform_name<<std::endl;
+        std::cout<<"Platform Vendor: "<<platform_vendor<<std::endl;
+        std::cout<<"Platform Extensions: \t"<<platform_extensions<<std::endl;
 
-    std::cout<<std::endl<<std::endl;
+        std::cout<<std::endl<<std::endl;
     }
 }
 
@@ -219,8 +219,8 @@ void initOcl(){
         err = clGetDeviceIDs(PLATFORM, CL_DEVICE_TYPE_CPU, ret_num_devices_cpu, &devices[0], NULL);
             if(err!=0){std::cout<<"clGetDeviceIDs Error! Error Code: "<<err<<std::endl;}
     }
-    if(ret_num_devices_cpu>0){
-        err = clGetDeviceIDs(PLATFORM, CL_DEVICE_TYPE_GPU, ret_num_devices_cpu, &devices[0+ret_num_devices_cpu], NULL);
+    if(ret_num_devices_gpu>0){
+        err = clGetDeviceIDs(PLATFORM, CL_DEVICE_TYPE_GPU, ret_num_devices_gpu, &devices[0+ret_num_devices_cpu], NULL);
             if(err!=0){std::cout<<"clGetDeviceIDs Error! Error Code: "<<err<<std::endl;}
     }
 

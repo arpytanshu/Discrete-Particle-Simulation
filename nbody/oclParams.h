@@ -13,7 +13,7 @@
 
 
 //PATH TO KERNEL SOURCE FILE
-char kernel_filename[40] = "D:/bash/project 2017/nbody/kernel.cl";
+char kernel_filename[100] = "/home/ansh/Documents/CHECKOUTS/Discrete-Particle-Simulation/nbody/kernel.cl";
 char kernel_func_name[20] = "nBody_kern";
 
 int MAX_RAND =  360;      //MAXIMUM VALUES FOR RAND

@@ -14,7 +14,7 @@
 #define PI 3.14
 
 //PATH TO KERNEL SOURCE FILE
-char source_filename[40] = "D:/bash/project 2017/SPH/newKernel.cl";
+char source_filename[100] = "/home/ansh/Documents/CHECKOUTS/Discrete-Particle-Simulation/SPH/newKernel.cl";
 
 
 int MAX_RAND =  50;      //MAXIMUM VALUES FOR RAND
